@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carina A. Product Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define the font family for the entire body */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #022129; /* New background color */
+            color: #d1d5db; /* This will be overridden by the text-white class on body */
+        }
+
+        /* Adjust card background for dark mode */
+        .bg-white {
+            background-color: #1f2937;
+        }
+
+        /* Custom styles for the popup with your specified colors */
+        .modal-bg {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .modal-content-wrapper {
+            background: linear-gradient(135deg, #09D4F4, #ffffff);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 1px; /* Creates a vibrant border effect */
+        }
+        .modal-inner-content {
+            background-color: #1A3A47; /* Updated to match new theme */
+        }
+
+        /* Custom Polaroid style */
+        .polaroid-card {
+            background-color: #1A3A47; /* Updated to match new theme */
+            color: #d1d5db;
+            padding: 0.5rem 0.5rem 2rem 0.5rem; /* Thicker bottom padding for the classic look */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 0.5rem; /* Rounded corners for the card */
+            transform-origin: center;
+            /* Removed the tilt for a symmetrical look */
+        }
+
+        .polaroid-card:hover {
+            transform: scale(1.05); /* Removed the rotation from hover for a cleaner effect */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10; /* Bring hovered card to front */
+        }
+
+        /* Ensure all grid items have the same height for symmetry */
+        .grid-container {
+            grid-auto-rows: 1fr;
+        }
+    </style>
+</head>
+<body class="bg-[#022129] text-white">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#0B2834] shadow-md transition-colors duration-500">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold text-white">CA.portfolio</a>
+            <div class="flex items-center space-x-4">
+                <a href="#work" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Work</a>
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">About</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20 md:py-32">
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg font-medium text-gray-400 mb-4 animate-fade-in-up">Product Designer & Photography enthusiast</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight text-white animate-scale-in">
+                    Building <span style="color: #09D4F4;">beautiful</span> and <span style="color: #09D4F4;">intuitive</span> digital experiences.
+                </h1>
+                <p class="text-lg text-gray-400 mt-6 max-w-2xl mx-auto text-justify">
+                    Hi, I'm Carina. I specialise in designing end-to-end user experiences that are both functional and visually captivating, bringing a creative flair to every project.
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="work" class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-10 text-white">Selected Work</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 grid-container">
+                
+                <!-- Project Card 1 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="Mobile Banking App Redesign"
+                   data-description="A case study on improving the user flow and visual hierarchy of a financial application. This project focused on creating a seamless and secure experience for users managing their finances on the go. Key features included a simplified transfer process, clear balance overviews, and personalized insights."
+                   data-image="https://placehold.co/800x600/374151/FFFFFF?text=Project+One"
+                   data-figma="https://www.figma.com/embed?embed_host=localhost&url=https://www.figma.com/file/R9N1k6K8X3Z3n7C8c5q6z7/Mobile-Banking-App-Redesign?node-id=0%3A1">
+                    <img src="https://placehold.co/800x600/374151/FFFFFF?text=Project+One" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">Mobile Banking App Redesign</h3>
+                        <p class="text-gray-400 text-sm">A case study on improving the user flow and visual hierarchy of a financial application.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 2 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="E-commerce Platform UX"
+                   data-description="Optimizing the checkout experience to reduce cart abandonment and increase conversions. I conducted user research, created wireframes, and designed a new, intuitive checkout flow. The goal was to make the purchasing process as simple and fast as possible."
+                   data-image="https://placehold.co/800x600/4B5563/FFFFFF?text=Project+Two">
+                    <img src="https://placehold.co/800x600/4B5563/FFFFFF?text=Project+Two" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">E-commerce Platform UX</h3>
+                        <p class="text-gray-400 text-sm">Optimizing the checkout experience to reduce cart abandonment and increase conversions.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 3 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="Healthcare Dashboard UI"
+                   data-description="Designing a data-rich, accessible interface for medical professionals. This project involved complex data visualization and ensuring the dashboard was easy to read and interact with, even under stressful conditions. Accessibility was a key focus throughout the design process."
+                   data-image="https://placehold.co/800x600/6B7280/FFFFFF?text=Project+Three">
+                    <img src="https://placehold.co/800x600/6B7280/FFFFFF?text=Project+Three" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">Healthcare Dashboard UI</h3>
+                        <p class="text-gray-400 text-sm">Designing a data-rich, accessible interface for medical professionals.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 4 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="Community Forum Platform"
+                   data-description="Fostering user engagement through intuitive design and social features. The goal was to create a vibrant online community where users could easily connect, share information, and participate in discussions. I focused on a clean layout and easy-to-use navigation."
+                   data-image="https://placehold.co/800x600/4B5563/FFFFFF?text=Project+Four">
+                    <img src="https://placehold.co/800x600/4B5563/FFFFFF?text=Project+Four" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">Community Forum Platform</h3>
+                        <p class="text-gray-400 text-sm">Fostering user engagement through intuitive design and social features.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 5 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="SaaS Onboarding Flow"
+                   data-description="Creating a seamless and delightful first-time user experience for a B2B product. I designed a guided onboarding process that reduced cognitive load and helped new users quickly understand the platform's core value. User feedback was crucial in iterating on the design."
+                   data-image="https://placehold.co/800x600/374151/FFFFFF?text=Project+Five">
+                    <img src="https://placehold.co/800x600/374151/FFFFFF?text=Project+Five" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">SaaS Onboarding Flow</h3>
+                        <p class="text-gray-400 text-sm">Creating a seamless and delightful first-time user experience for a B2B product.</p>
+                    </div>
+                </a>
+
+                <!-- Project Card 6 -->
+                <a href="#" class="project-card polaroid-card group block overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                   data-title="NFT Marketplace UI/UX"
+                   data-description="Designing a responsive and secure platform for digital art and collectibles. This project required a deep understanding of blockchain technology and the unique needs of a decentralized market. I focused on making the buying and selling process clear and trustworthy for all users."
+                   data-image="https://placehold.co/800x600/6B7280/FFFFFF?text=Project+Six">
+                    <img src="https://placehold.co/800x600/6B7280/FFFFFF?text=Project+Six" alt="Project Placeholder" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-200">NFT Marketplace UI/UX</h3>
+                        <p class="text-gray-400 text-sm">Designing a responsive and secure platform for digital art and collectibles.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-12 text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-white">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left text-white">
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Figma & Sketch</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Prototyping</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">User Research & Testing</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Interaction Design</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Wireframing & UI Design</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">HTML, CSS, & JS</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Agile Methodologies</span>
+                </div>
+                <div class="flex items-center space-x-3 bg-[#1A3A47] p-4 rounded-xl shadow-md">
+                    <i class="fas fa-check-circle" style="color: #09D4F4;"></i>
+                    <span class="text-base font-medium">Design Systems</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-white">About Me</h2>
+            <p class="text-gray-400 leading-relaxed text-justify">
+                With a five year foundation in Customer Success, four of which were at a global SaaS company building apps, I've built a deep understanding of what makes a product successful from the user's perspective. My role involved more than just support, I was a consultant, a problem-solver, and a direct collaborator in the app design and development process. My strength lies in applying UX design principles to rapidly prototype and build mobile and desktop applications using low-code tools and collaborating directly with developers. This experience gave me a unique insight into how users interact with technology and what they need to succeed. I'm now transitioning my skills in user empathy, technical problem-solving, and cross-functional collaboration into a full-time product design career, with a focus on creating intuitive and impactful user experiences. While my basic coding knowledge in HTML, CSS, and JavaScript is a valuable asset, my primary focus remains on bridging user needs with strategic product creation and functional design.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-white">Get In Touch</h2>
+            <p class="text-gray-400 mb-6 max-w-2xl mx-auto text-justify">
+                I'm currently seeking new opportunities. Feel free to reach out to me to discuss a potential project, collaborate on a new idea, or just say hello.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="mailto:your.email@example.com" class="bg-[#09D4F4] hover:bg-[#00A1C4] text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-lg flex-1 text-center">
+                    Say Hello
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 shadow-lg flex items-center justify-center space-x-2 flex-1">
+                    <i class="fab fa-linkedin"></i>
+                    <span>Connect on LinkedIn</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[100] modal-bg flex items-center justify-center p-4 hidden">
+        <div class="modal-content-wrapper rounded-xl max-w-3xl w-full">
+            <div class="modal-inner-content rounded-xl p-8 relative max-h-[90vh] overflow-y-auto">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                    <i class="fas fa-times fa-lg"></i>
+                </button>
+                <img id="modal-image" src="" alt="Project Image" class="w-full h-auto rounded-lg mb-6 shadow-md">
+                <iframe id="modal-iframe" src="" frameborder="0" class="w-full aspect-video rounded-lg hidden" allowfullscreen></iframe>
+                <h3 id="modal-title" class="text-2xl font-bold mb-2 text-white"></h3>
+                <p id="modal-description" class="text-gray-400 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-400">
+        <p>&copy; <span id="current-year"></span> CA.portfolio All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Project Modal Logic ---
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectModal = document.getElementById('project-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalIframe = document.getElementById('modal-iframe');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the default link behavior
+                    
+                    // Get data from the clicked card's data attributes
+                    const title = card.getAttribute('data-title');
+                    const description = card.getAttribute('data-description');
+                    const image = card.getAttribute('data-image');
+                    const figmaUrl = card.getAttribute('data-figma');
+
+                    // Update the modal content
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+
+                    // Show either the iframe or the image based on the data
+                    if (figmaUrl) {
+                        modalIframe.src = figmaUrl;
+                        modalIframe.classList.remove('hidden');
+                        modalImage.classList.add('hidden');
+                    } else {
+                        modalImage.src = image;
+                        modalImage.classList.remove('hidden');
+                        modalIframe.classList.add('hidden');
+                    }
+
+                    // Show the modal
+                    projectModal.classList.remove('hidden');
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                projectModal.classList.add('hidden');
+            });
+
+            // Close modal when clicking outside the content
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    projectModal.classList.add('hidden');
+                }
+            });
+
+            // --- Dynamic Year Logic ---
+            const currentYearSpan = document.getElementById('current-year');
+            const currentYear = new Date().getFullYear();
+            currentYearSpan.textContent = currentYear;
+        });
+    </script>
+    
+</body>
+</html>
